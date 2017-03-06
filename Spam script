@@ -1,0 +1,34 @@
+function general(){
+    item = document.createElement("div");
+    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;' id='spam'>"
+    item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
+    item2.insertBefore(item, item2.childNodes[1]);
+    panel = document.getElementsByClassName("pane pane-list")[0];
+    elemento = document.createElement("div");
+    elemento.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' size='30'><input type='number' min='1' id='repeticiones' style='width:50px'>Times </header>";
+    panel.insertBefore(elemento, panel.childNodes[1]);
+    document.getElementById("spam").addEventListener("click", spam);
+}
+
+setTimeout(general,5000); //Waits 5 seconds before the script is executed, this way the webpage has time to load completely
+
+function dispatch(target, eventType, char) {
+   var evt = document.createEvent("TextEvent");    
+   evt.initTextEvent (eventType, true, true, window, char, 0, "en-US");
+   target.focus();
+   target.dispatchEvent(evt);
+}
+
+function spam(){
+  texto = document.getElementById("mensaje").value //Gets text
+  reps = document.getElementById("repeticiones").value // Gets reps
+  campo = document.getElementsByClassName("input")[1];
+  contador = 1;
+  while(contador<=reps){
+    dispatch(campo, "textInput", texto); 
+    var input = document.getElementsByClassName("icon btn-icon icon-send"); //Selects send button
+    input[0].click(); //Here we go, send the message!
+    contador++;
+    setTimeout(function(){ }, 1);
+  }
+}
