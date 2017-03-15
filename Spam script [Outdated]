@@ -12,11 +12,14 @@ function general(){
 
 setTimeout(general,5000); //Waits 5 seconds before the script is executed, this way the webpage has time to load completely
 
-function dispatch(target, eventType, char) {
-   var evt = document.createEvent("TextEvent");    
-   evt.initTextEvent (eventType, true, true, window, char, 0, "en-US");
-   target.focus();
-   target.dispatchEvent(evt);
+function dispatch(input, message) {
+    InputEvent = Event || InputEvent;
+    var evt = new InputEvent('input', {
+        bubbles: true
+    });
+    input.innerHTML = message;
+    input.dispatchEvent(evt);
+    document.querySelector(".btn-icon").click(); //Selects send button //Here we go, send the message!
 }
 
 function spam(){
@@ -25,9 +28,7 @@ function spam(){
   campo = document.getElementsByClassName("input")[1];
   contador = 1;
   while(contador<=reps){
-    dispatch(campo, "textInput", texto); 
-    var input = document.getElementsByClassName("icon btn-icon icon-send"); //Selects send button
-    input[0].click(); //Here we go, send the message!
+    dispatch(campo, texto); 
     contador++;
     setTimeout(function(){ }, 1);
   }
