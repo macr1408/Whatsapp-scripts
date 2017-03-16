@@ -1,35 +1,34 @@
 function general(){
-    item = document.createElement("div");
+    var item = document.createElement("div");							  // Create button
     item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;' id='spam'>"
-    item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
+    var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
     item2.insertBefore(item, item2.childNodes[1]);
-    panel = document.getElementsByClassName("pane pane-list")[0];
-    elemento = document.createElement("div");
-    elemento.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' size='30'><input type='number' min='1' id='repeticiones' style='width:50px'>Times </header>";
-    panel.insertBefore(elemento, panel.childNodes[1]);
-    document.getElementById("spam").addEventListener("click", spam);
+    var panel = document.getElementsByClassName("pane pane-list")[0];
+    element = document.createElement("div");							  // Create text and reps inputs
+    element.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' style='margin-right:10px' size='30'><input type='number' min='1' id='repeticiones' style='width:50px;padding-left:5px;margin-right:5px'>Times </header>";
+    panel.insertBefore(element, panel.childNodes[1]);					  // Insert everything we have created
+    document.getElementById("spam").addEventListener("click", spam);     // Assign a function to the botton
 }
 
-setTimeout(general,5000); //Waits 5 seconds before the script is executed, this way the webpage has time to load completely
+setTimeout(general,5000); 									// Wait 5 seconds before the script is executed, this way the webpage has time to load completely
 
 function dispatch(input, message) {
     InputEvent = Event || InputEvent;
-    var evt = new InputEvent('input', {
+    var evt = new InputEvent('input', {						// Create a new event from type "input"
         bubbles: true
     });
-    input.innerHTML = message;
-    input.dispatchEvent(evt);
-    document.querySelector(".btn-icon").click(); //Selects send button //Here we go, send the message!
+    input.innerHTML = message;								// Get text to spam
+    input.dispatchEvent(evt);								// Fire the event (inserts text) in the input field.
+    document.querySelector(".btn-icon").click(); 			// Press send button
 }
 
 function spam(){
-  texto = document.getElementById("mensaje").value //Gets text
-  reps = document.getElementById("repeticiones").value // Gets reps
-  campo = document.getElementsByClassName("input")[1];
-  contador = 1;
-  while(contador<=reps){
-    dispatch(campo, texto); 
-    contador++;
-    setTimeout(function(){ }, 1);
+  var text = document.getElementById("mensaje").value       // Get text to spam
+  var reps = document.getElementById("repeticiones").value  // Get number of repetitions
+  var input = document.getElementsByClassName("input")[1];  // Select the input 
+  var counter = 1; 											// Initialize a counter
+  while(counter <= reps){									// Iterate the number of repetitions needed
+    dispatch(input, text); 									// Spam!
+    counter++;
   }
-}
+} 
