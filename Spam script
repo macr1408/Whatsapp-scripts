@@ -1,6 +1,6 @@
 function general(){
     var item = document.createElement("div");							  // Create button
-    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;' id='spam'>"
+    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;' id='spam'>";
     var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
     item2.insertBefore(item, item2.childNodes[1]);
     var panel = document.getElementsByClassName("chatlist-panel pane pane-one")[0];
@@ -23,8 +23,8 @@ function dispatch(input, message) {
 }
 
 function spam(){
-  var text = document.getElementById("mensaje").value       // Get text to spam
-  var reps = document.getElementById("repeticiones").value  // Get number of repetitions
+  var text = document.getElementById("mensaje").value;       // Get text to spam
+  var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
   var input = document.getElementsByClassName("input")[1];  // Select the input 
   var counter = 1; 											// Initialize a counter
   while(counter <= reps){									// Iterate the number of repetitions needed
