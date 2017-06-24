@@ -25,7 +25,7 @@ function dispatch(input, message) {
 function spam(){
   var text = document.getElementById("mensaje").value;       // Get text to spam
   var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
-  var input = document.getElementsByClassName("input")[1];  // Select the input 
+  var input = document.getElementsByClassName("input")[0];  // Select the input 
   var counter = 1; 											// Initialize a counter
   while(counter <= reps){									// Iterate the number of repetitions needed
     dispatch(input, text); 									// Spam!
