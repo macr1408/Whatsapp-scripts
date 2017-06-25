@@ -1,34 +1,39 @@
-function general(){
-    var item = document.createElement("div");							  // Create button
-    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;cursor:pointer' id='spam'>";
-    var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
-    item2.insertBefore(item, item2.childNodes[1]);
-    var panel = document.getElementsByClassName("chatlist-panel pane pane-one")[0];
-    element = document.createElement("div");							  // Create text and reps inputs
-    element.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' placeholder='Message' style='margin-right:10px' size='30'><input type='number' min='1' id='repeticiones' style='width:50px;padding-left:5px;margin-right:5px'>Times </header>";
-    panel.insertBefore(element, panel.childNodes[1]);					  // Insert everything we have created
-    document.getElementById("spam").addEventListener("click", spam);     // Assign a function to the botton
-}
+ var timer = setInterval(general,1000);
 
-setTimeout(general,5000); 									// Wait 5 seconds before the script is executed, this way the webpage has time to load completely
+    function general(){
+        if(document.getElementsByClassName("app-wrapper-main")[0] != null){
+            var item = document.createElement("div");							  // Create button
+            item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;cursor:pointer' id='spam'>";
+            var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
+            item2.insertBefore(item, item2.childNodes[1]);
+            var panel = document.getElementsByClassName("chatlist-panel pane pane-one")[0];
+            element = document.createElement("div");							  // Create text and reps inputs
+            element.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' placeholder='Message' style='margin-right:10px' size='30'><input type='number' min='1' id='repeticiones' style='width:50px;padding-left:5px;margin-right:5px'>Times </header>";
+            panel.insertBefore(element, panel.childNodes[1]);					  // Insert everything we have created
+            document.getElementById("spam").addEventListener("click", spam);     // Assign a function to the botton
+            clearInterval(timer);
+        }else{
+            console.log("WS Spam: Waiting for whatsapp to load...");
+        }
+    }
 
-function dispatch(input, message) {
-    InputEvent = Event || InputEvent;
-    var evt = new InputEvent('input', {						// Create a new event from type "input"
-        bubbles: true
-    });
-    input.innerHTML = message;								// Get text to spam
-    input.dispatchEvent(evt);								// Fire the event (inserts text) in the input field.
-    document.querySelector(".icon-send").click(); 			// Press send button
-}
+    function dispatch(input, message) {
+        InputEvent = Event || InputEvent;
+        var evt = new InputEvent('input', {						// Create a new event from type "input"
+            bubbles: true
+        });
+        input.innerHTML = message;								// Get text to spam
+        input.dispatchEvent(evt);								// Fire the event (inserts text) in the input field.
+        document.querySelector(".icon-send").click(); 			// Press send button
+    }
 
-function spam(){
-  var text = document.getElementById("mensaje").value;       // Get text to spam
-  var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
-  var input = document.getElementsByClassName("input")[0];  // Select the input 
-  var counter = 1; 											// Initialize a counter
-  while(counter <= reps){									// Iterate the number of repetitions needed
-    dispatch(input, text); 									// Spam!
-    counter++;
-  }
-} 
+    function spam(){
+        var text = document.getElementById("mensaje").value;       // Get text to spam
+        var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
+        var input = document.getElementsByClassName("input")[0];  // Select the input 
+        var counter = 1; 											// Initialize a counter
+        while(counter <= reps){									// Iterate the number of repetitions needed
+            dispatch(input, text); 									// Spam!
+            counter++;
+        }
+    }
