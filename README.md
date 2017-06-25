@@ -5,3 +5,4 @@ Credits to:
 - Liad Livnat @ StackOverflow - For providing the core of this script with his event script
 - Rodrigo Manguinho @ StackOverlow - For updating that core and making this script to work again
 - eduardomazolini @ Github
+- CadillacOne for some css ideas
