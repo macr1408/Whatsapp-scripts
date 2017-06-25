@@ -1,11 +1,11 @@
 function general(){
     var item = document.createElement("div");							  // Create button
-    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;' id='spam'>";
+    item.innerHTML = "<img src='http://k30.kn3.net/9CE61B28D.png' style='width:24px;height:24px;cursor:pointer' id='spam'>";
     var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
     item2.insertBefore(item, item2.childNodes[1]);
     var panel = document.getElementsByClassName("chatlist-panel pane pane-one")[0];
     element = document.createElement("div");							  // Create text and reps inputs
-    element.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' style='margin-right:10px' size='30'><input type='number' min='1' id='repeticiones' style='width:50px;padding-left:5px;margin-right:5px'>Times </header>";
+    element.innerHTML = "<header class='pane-header pane-list-header'><input type='text' id='mensaje' placeholder='Message' style='margin-right:10px' size='30'><input type='number' min='1' id='repeticiones' style='width:50px;padding-left:5px;margin-right:5px'>Times </header>";
     panel.insertBefore(element, panel.childNodes[1]);					  // Insert everything we have created
     document.getElementById("spam").addEventListener("click", spam);     // Assign a function to the botton
 }
