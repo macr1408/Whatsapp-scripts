@@ -6,3 +6,4 @@ Credits to:
 - Rodrigo Manguinho @ StackOverlow - For updating that core and making this script to work again
 - eduardomazolini @ Github
 - CadillacOne for some css ideas
+- thebigsmileXD @ Github
