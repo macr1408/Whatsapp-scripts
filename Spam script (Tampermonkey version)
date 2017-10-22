@@ -30,17 +30,18 @@
     function dispatch(input, message) {
         InputEvent = Event || InputEvent;
         var evt = new InputEvent('input', {						// Create a new event from type "input"
-            bubbles: true
+            bubbles: true,
+	    composer: true
         });
         input.innerHTML = message;								// Get text to spam
         input.dispatchEvent(evt);								// Fire the event (inserts text) in the input field.
-        document.querySelector(".compose-btn-send > .icon-send").click(); 			// Press send button
+        document.querySelector(".compose-btn-send > span").click(); 			// Press send button
     }
 
     function spam(){
         var text = document.getElementById("mensaje").value;       // Get text to spam
         var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
-        var input = document.getElementsByClassName("input")[0];  // Select the input 
+        var input = document.querySelector("#main > footer > div.block-compose > div.input-container > div > div.pluggable-input-body.copyable-text.selectable-text");  // Select the input 
         var counter = 1; 											// Initialize a counter
         while(counter <= reps){									// Iterate the number of repetitions needed
             dispatch(input, text); 									// Spam!
