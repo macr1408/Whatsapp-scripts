@@ -11,9 +11,11 @@
 // ==/UserScript==
 
  var timer = setInterval(general,1000);
-
+ var a = 0;
     function general(){
-        if(document.getElementsByClassName("app-wrapper-main")[0] != null){
+    	if (a === 0){alert("welcome to the spam script. Please notice the two input boxes and the gray send button !");}
+        a++;
+        if(document.getElementsByClassName("app-wrapper-main")[0] !== null){
             var item2 = document.getElementsByClassName("pane-header pane-list-header")[0];
             var panel = document.getElementsByClassName("chatlist-panel")[0];
             var element = item2.cloneNode(true);							  // Create text and reps inputs
