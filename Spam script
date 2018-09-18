@@ -1,7 +1,7 @@
 var timer = setInterval(general,1000);
 
     function general(){
-        if(document.getElementsByClassName("app-wrapper-main")[0] != null){
+        if(document.getElementsByClassName("app-wrapper-web")[0] != null){
             var item2 = document.getElementsByClassName("_3auIg")[0];
             var panel = document.getElementsByClassName("swl8g")[0];
             var element = item2.cloneNode(true);							  // Create text and reps inputs
@@ -23,13 +23,13 @@ var timer = setInterval(general,1000);
         });
         input.innerHTML = message;								// Get text to spam
         input.dispatchEvent(evt);								// Fire the event (inserts text) in the input field.
-        document.querySelector("._2lkdt > span").click(); 			// Press send button
+        document.querySelector("#main > footer > div._3pkkz.copyable-area > div:nth-child(3) > button > span").click(); 			// Press send button
     }
 
     function spam(){
         var text = document.getElementById("mensaje").value;       // Get text to spam
         var reps = document.getElementById("repeticiones").value;  // Get number of repetitions
-        var input = document.querySelector("#main > footer > div._3oju3 > div._2bXVy > div > div.pluggable-input-body.copyable-text.selectable-text");  // Select the input
+        var input = document.querySelector("#main > footer > div._3pkkz.copyable-area > div._1Plpp > div > div._2S1VP.copyable-text.selectable-text");  // Select the input
         var counter = 1; 											// Initialize a counter
         while(counter <= reps){									// Iterate the number of repetitions needed
             dispatch(input, text); 									// Spam!
