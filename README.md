@@ -4,7 +4,7 @@ Open source spam script made by me, i'm not responsible for any damage made with
 ## How to use the script:
 ### Normal version:
 
-- Go to the [Spam script](Spam_script) file
+- Go to the [Spam script](Spam_script.js) file
 - Copy all the code from the file
 - Go to [WhatsApp Web](https://web.whatsapp.com)
 - Open the console (actions may vary based on the browser, on Chrome you can either use <kbd>F12</kbd> or <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>I</kbd>)
@@ -17,7 +17,7 @@ Open source spam script made by me, i'm not responsible for any damage made with
 
 ### Tampermonkey version:
 
-- Go to the [Spam script (Tampermonkey version)](Spam_script_(Tampermonkey_version)) file
+- Go to the [Spam script (Tampermonkey version)](Spam_script_(Tampermonkey_version).js) file
 - Copy all the code from the file
 - Go into the Tampermonkey menu and click 'Add new script'
 - Paste the code into the script, then click on File > Save
