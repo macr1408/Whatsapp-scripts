@@ -17,7 +17,7 @@ Open source spam script made by me, i'm not responsible for any damage made with
 
 ### Tampermonkey version:
 
-- Go to the [Spam script (Tampermonkey version)](Spam_script_(Tampermonkey_version).js) file
+- Go to the [Spam script (Tampermonkey version)](Spam_script_Tampermonkey.js) file
 - Copy all the code from the file
 - Go into the Tampermonkey menu and click 'Add new script'
 - Paste the code into the script, then click on File > Save
